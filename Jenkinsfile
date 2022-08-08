@@ -3,17 +3,17 @@ pipeline {
 
     environment {
 
-        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+        AWS_ACCESS_KEY_ID     = credentials('Hanan-aws-secret-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('Hanan-aws-secret-access-key')
 
-        AWS_S3_BUCKET = "tomcat-to"
-        ARTIFACT_NAME = "hello-world.war"
-        AWS_EB_APP_NAME = "selu2-webapp1"
+        AWS_S3_BUCKET = "hanan-belt2d2-artifacts-123456"
+        ARTIFACT_NAME = "spring-boot-rest-services-0.0.1-SNAPSHOT-q.jar"
+        AWS_EB_APP_NAME = "exam-day2-eb"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "Selu2webapp1-env"
+        AWS_EB_ENVIRONMENT = "Examday2eb-env"
 
-        SONAR_IP = "54.226.50.200"
-        SONAR_TOKEN = "sqp_15ebdad5eca6246acaa8dcfaae6563e5a1390095"
+        SONAR_IP = "52.23.193.18"
+        SONAR_TOKEN = "sqp_a579b9a40f62314cd52738f440c9f32330d366d5"
 
     }
 
@@ -54,7 +54,7 @@ pipeline {
             steps {
                 sh '''
                 mvn clean verify sonar:sonar \
-                    -Dsonar.projectKey=online-choert-han-project1 \
+                    -Dsonar.projectKey=-online-Hanan-B2D2 \
                     -Dsonar.host.url=http://$SONAR_IP \
                     -Dsonar.login=$SONAR_TOKEN
                 '''
@@ -70,7 +70,7 @@ pipeline {
 
             post {
                 success {
-                    archiveArtifacts artifacts: '**/target/**.war', followSymlinks: false
+                    archiveArtifacts artifacts: '**/target/**.jar', followSymlinks: false
 
                    
                 }
@@ -82,7 +82,7 @@ pipeline {
 
                 sh "aws configure set region us-east-1"
 
-                sh "aws s3 cp ./target/**.war s3://$AWS_S3_BUCKET/$ARTIFACT_NAME"
+                sh "aws s3 cp ./target/**.jar s3://$AWS_S3_BUCKET/$ARTIFACT_NAME"
                 
             }
         }
