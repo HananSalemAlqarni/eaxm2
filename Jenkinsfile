@@ -7,7 +7,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
 
         AWS_S3_BUCKET = "hanan-belt2d2-artifacts-123456"
-        ARTIFACT_NAME = "hello-word.jar"
+        ARTIFACT_NAME = "hello-world.jar"
         AWS_EB_APP_NAME = "exam-day2-eb"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Examday2eb-env"
