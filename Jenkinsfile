@@ -8,9 +8,9 @@ pipeline {
 
         AWS_S3_BUCKET = "hanan-alqarni-belt2d2-artifacts-123456"
         ARTIFACT_NAME = "hello-dojo.jar"
-        AWS_EB_APP_NAME = "exam-test-1"
+        AWS_EB_APP_NAME = "exam-2"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "Examtest1-env"
+        AWS_EB_ENVIRONMENT = "Exam2-env"
 
         SONAR_IP = "52.23.193.18"
         SONAR_TOKEN = "sqp_a579b9a40f62314cd52738f440c9f32330d366d5"
