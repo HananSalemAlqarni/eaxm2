@@ -6,11 +6,11 @@ pipeline {
         AWS_ACCESS_KEY_ID     = credentials('Hanan-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('Hanan-aws-secret-access-key')
 
-        AWS_S3_BUCKET = "hanan-alqarni-belt2d2-artifacts-123456"
+        AWS_S3_BUCKET = "hanan-salem-alqarni-belt2d2-artifacts-123456"
         ARTIFACT_NAME = "hello-dojo.jar"
-        AWS_EB_APP_NAME = "exam-2"
+        AWS_EB_APP_NAME = "exam-3-web"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "Exam2-env"
+        AWS_EB_ENVIRONMENT = "Exam3web-env"
 
         SONAR_IP = "52.23.193.18"
         SONAR_TOKEN = "sqp_a579b9a40f62314cd52738f440c9f32330d366d5"
