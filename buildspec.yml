@@ -24,7 +24,7 @@ phases:
     commands:
     - echo Build start on 'date'
     - mvn package
-    - mv target/*.war helloworld.war
+    - mv target/*.jar hello-dojo.jar
     - echo Build ends on 'date'
 
 artifacts:
