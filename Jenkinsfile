@@ -7,7 +7,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('Hanan-aws-secret-access-key')
 
         AWS_S3_BUCKET = "hanan-alqarni-belt2d2-artifacts-123456"
-        ARTIFACT_NAME = "spring-boot-rest-services-0.0.1-SNAPSHOT.jar"
+        ARTIFACT_NAME = "hello-dojo.jar"
         AWS_EB_APP_NAME = "exam-test-1"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Examtest1-env"
