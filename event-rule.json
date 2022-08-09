@@ -1,0 +1,13 @@
+{
+    "detail-type":[
+        "Aws Console Sign in via CloudTrail"
+    ],
+    "detail":{
+        "userIdentity":{
+            "type":[
+                "Root"
+            ]
+        }
+
+    }
+}
